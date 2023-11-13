@@ -10,16 +10,36 @@
     <div class="hero">
             <div class="calendar">
                 <div class="left">
-                    <p>01</p>
-                    <p>Sunday</p>
+                    <p id="date">01</p>
+                    <p id="day">Sunday</p>
                 </div>
                 <div class="right">
-                    <p>January</p>
-                    <p>2020</p>
+                    <p id="month">January</p>
+                    <p id="year">2020</p>
                 </div>
             </div>
     </div>
+  </div>
 
-    </div>
+  <script>
+    const date = document.getElementById("date");
+    const day = document.getElementById("day");
+    const month = document.getElementById("month");
+    const year= document.getElementById("year");
+
+const today = new Date();
+
+const weekDays = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Dimanche"];
+const allMonths = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Decembre"];
+
+
+
+date.innerHTML = today.getDate();
+day.innerHTML = weekDays[today.getDay()];
+month.innerHTML = allMonths[today.getMonth()];
+year.innerHTML = today.getFullYear();
+
+
+  </script>
 </body>
 </html>
